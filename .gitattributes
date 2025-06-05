@@ -1,0 +1,45 @@
+# 将所有文本文件在提交到 Git 仓库时自动转换为 LF 行尾符。
+# - 在 Windows 上，Git 会将 LF 转换为 CRLF。
+# - 在 Linux/macOS 上，Git 会保持 LF 不变。
+# 这是推荐的跨平台协作设置。
+* text=auto eol=lf
+
+# 对于明确需要 LF 行尾符的文件 (例如 Shell 脚本, JS, Python 等)
+*.sh    eol=lf
+*.js    eol=lf
+*.jsx   eol=lf
+*.ts    eol=lf
+*.tsx   eol=lf
+*.css   eol=lf
+*.scss  eol=lf
+*.html  eol=lf
+*.htm   eol=lf
+*.xml   eol=lf
+*.json  eol=lf
+*.yaml  eol=lf
+*.yml   eol=lf
+*.md    eol=lf
+*.py    eol=lf
+*.java  eol=lf
+*.go    eol=lf
+*.rb    eol=lf
+*.php   eol=lf
+# ... 其他您项目中常用的文本文件类型
+
+# 对于明确需要 CRLF 行尾符的文件 (例如 Windows 批处理文件)
+*.bat   eol=crlf
+*.cmd   eol=crlf
+
+# 对于二进制文件，Git 不应尝试转换行尾符
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.pdf   binary
+*.zip   binary
+*.gz    binary
+*.jar   binary
+*.exe   binary
+*.dll   binary
+# ... 其他二进制文件类型

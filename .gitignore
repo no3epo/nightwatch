@@ -1,0 +1,11 @@
+# Dependency directory
+node_modules/
+
+# VitePress build output
+.vitepress/dist
+
+# VitePress or build tool caches
+.vitepress/cache/
+
+# WebStorm IDE config
+.idea/
