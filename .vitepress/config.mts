@@ -1,28 +1,23 @@
-import {defineConfig} from 'vitepress';
+import {defineConfig} from 'vitepress'
+import {sharedConfig} from './theme/config/share.mts'
+import {zhConfig} from './theme/config/zh.mts'
+import {enConfig} from './theme/config/en.mts'
 
 export default defineConfig({
-    title: "Night` Watch",
-    description: "A VitePress Site",
-    srcDir: 'docs',
-    base: '/nightwatch/',
-    themeConfig: {
-        nav: [
-            {text: 'Home', link: '/'},
-            {text: 'Examples', link: '/markdown-examples'}
-        ],
+    ...sharedConfig,
 
-        sidebar: [
-            {
-                text: 'Examples',
-                items: [
-                    {text: 'Markdown Examples', link: '/markdown-examples'},
-                    {text: 'Runtime API Examples', link: '/api-examples'}
-                ]
-            }
-        ],
-
-        socialLinks: [
-            {icon: 'github', link: 'https://github.com/no3epo/nightwatch'}
-        ]
+    locales: {
+        zh: {
+            label: '简体中文',
+            lang: 'zh-CN',
+            link: '/zh/',
+            ...zhConfig
+        },
+        en: {
+            label: 'English',
+            lang: 'en',
+            link: '/en/',
+            ...enConfig
+        }
     }
 })
